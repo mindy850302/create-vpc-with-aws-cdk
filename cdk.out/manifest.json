@@ -1,0 +1,399 @@
+{
+  "version": "1.21.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "vpc": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "vpc.template.json"
+      },
+      "metadata": {
+        "/vpc/My Lab VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCF4B60AD5",
+            "trace": [
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:286:25)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet1Subnet20377300",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet1RouteTableF283C97E",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet1RouteTableAssociationA55EB6F8",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet1DefaultRoute3BCF8217",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:23)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:317:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:316:32)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet2Subnet1F0E3487",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:576:24)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:591:23)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet2RouteTableAssociation0B957518",
+            "trace": [
+              "new Subnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:596:9)",
+              "new PublicSubnet (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:733:9)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:505:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:489:32)",
+              "Vpc.createSubnets (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:480:18)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:306:14)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/My-PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCMyPublicSubnet2DefaultRoute818CB36C",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:623:23)",
+              "/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:317:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:316:32)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCIGWA4D3C0CD",
+            "trace": [
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:310:25)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/My Lab VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLabVPCVPCGW99F6FE72",
+            "trace": [
+              "new Vpc (/private/var/folders/xc/ds6hgwfd1td7t86y37rvt7_00000gn/T/jsii-kernel-1OC3zR/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:312:25)",
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-CIDR": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCCIDR",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-id": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCid",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-AZ-1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCAZ1",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-AZ-2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCAZ2",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-Public-Subnet-1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-Public-Subnet-1-Route-Table-id": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet1RouteTableid",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-Public-Subnet-2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/vpc/VPC-Public-Subnet-2-Route-Table-id": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCPublicSubnet2RouteTableid",
+            "trace": [
+              "/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8296:20)",
+              "Kernel._create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7836:26)",
+              "Kernel.create (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7371:28)",
+              "KernelHost.run (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (/anaconda3/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cx-api": "1.32.2",
+      "@aws-cdk/core": "1.32.2",
+      "@aws-cdk/region-info": "1.32.2",
+      "@aws-cdk/aws-iam": "1.32.2",
+      "@aws-cdk/aws-cloudwatch": "1.32.2",
+      "@aws-cdk/aws-logs": "1.32.2",
+      "@aws-cdk/aws-events": "1.32.2",
+      "@aws-cdk/aws-kms": "1.32.2",
+      "@aws-cdk/aws-s3": "1.32.2",
+      "@aws-cdk/aws-ssm": "1.32.2",
+      "@aws-cdk/aws-ec2": "1.32.2",
+      "@aws-cdk/assets": "1.32.2",
+      "@aws-cdk/aws-s3-assets": "1.32.2",
+      "@aws-cdk/aws-sqs": "1.32.2",
+      "@aws-cdk/aws-lambda": "1.32.2",
+      "@aws-cdk/aws-sns": "1.32.2",
+      "@aws-cdk/aws-cloudformation": "1.32.2",
+      "jsii-runtime": "Python/3.6.8"
+    }
+  }
+}

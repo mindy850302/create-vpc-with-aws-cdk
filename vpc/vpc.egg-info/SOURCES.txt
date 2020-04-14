@@ -1,0 +1,7 @@
+README.md
+setup.py
+vpc/vpc.egg-info/PKG-INFO
+vpc/vpc.egg-info/SOURCES.txt
+vpc/vpc.egg-info/dependency_links.txt
+vpc/vpc.egg-info/requires.txt
+vpc/vpc.egg-info/top_level.txt

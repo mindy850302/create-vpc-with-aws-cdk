@@ -20,6 +20,8 @@ setuptools.setup(
 
     install_requires=[
         "aws-cdk.core",
+        "aws-cdk.aws_ec2",
+        "aws-cdk.aws_cloudformation",
     ],
 
     python_requires=">=3.6",
