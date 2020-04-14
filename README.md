@@ -9,7 +9,9 @@ This project will create a VPC environment on AWS Console. It will create enviro
 - `1 Internet gateway`
 - `1 Route Tables`
 
-<img src='./images/VPC.png' width='80%'>
+<center>
+<img src='./images/VPC.png' width='60%'>
+</center>
 
 ## Get Start with AWS CDK
 
