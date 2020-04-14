@@ -11,7 +11,7 @@ This project will create a VPC environment on AWS Console. It will create enviro
 
 <img src='./images/VPC.png' width='80%'>
 
-## Useful Command
+## Get Start with AWS CDK
 
 This project is set up like a standard Python project.  The initialization
 process also creates a virtualenv within this project, stored under the .env
@@ -50,7 +50,7 @@ To add additional dependencies, for example other CDK libraries, just add
 them to your `setup.py` file and rerun the `pip install -r requirements.txt`
 command.
 
-# Useful commands
+## Useful commands
 
  * `cdk ls`          list all stacks in the app
  * `cdk synth`       emits the synthesized CloudFormation template
