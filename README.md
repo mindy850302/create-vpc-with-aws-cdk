@@ -7,7 +7,7 @@ This project will create a VPC environment on AWS Console. It will create enviro
 - `1 VPC`
 - `2 Public Subnets`
 - `1 Internet gateway`
-- `1 Route Tables`
+- `1 Route Table`
 
 <center>
 <img src='./images/VPC.png' width='60%'>
