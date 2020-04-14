@@ -1,9 +1,17 @@
 
-# Welcome to your CDK Python project!
+# Create VPC with AWS CDK
 
-This is a blank project for Python development with CDK.
+## Introduce
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This project will create a VPC environment on AWS Console. It will create environment as follow :
+- `1 VPC`
+- `2 Public Subnets`
+- `1 Internet gateway`
+- `1 Route Tables`
+
+<img src='./images/VPC.png' width='80%'>
+
+## Useful Command
 
 This project is set up like a standard Python project.  The initialization
 process also creates a virtualenv within this project, stored under the .env
@@ -25,11 +33,6 @@ step to activate your virtualenv.
 $ source .env/bin/activate
 ```
 
-If you are a Windows platform, you would activate the virtualenv like this:
-
-```
-% .env\Scripts\activate.bat
-```
 
 Once the virtualenv is activated, you can install the required dependencies.
 
@@ -55,4 +58,3 @@ command.
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!

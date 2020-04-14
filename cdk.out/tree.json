@@ -15,279 +15,224 @@
           "My Lab VPC": {
             "id": "My Lab VPC",
             "path": "vpc/My Lab VPC",
-            "children": {
-              "Resource": {
-                "id": "Resource",
-                "path": "vpc/My Lab VPC/Resource",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
-                  "aws:cdk:cloudformation:props": {
-                    "cidrBlock": "10.0.0.0/16",
-                    "enableDnsHostnames": true,
-                    "enableDnsSupport": true,
-                    "instanceTenancy": "default",
-                    "tags": [
-                      {
-                        "key": "Name",
-                        "value": "vpc/My Lab VPC"
-                      }
-                    ]
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+              "aws:cdk:cloudformation:props": {
+                "cidrBlock": "10.0.0.0/16",
+                "tags": [
+                  {
+                    "key": "Name",
+                    "value": "My Lab VPC"
                   }
-                }
-              },
-              "My-PublicSubnet1": {
-                "id": "My-PublicSubnet1",
-                "path": "vpc/My Lab VPC/My-PublicSubnet1",
-                "children": {
-                  "Subnet": {
-                    "id": "Subnet",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet1/Subnet",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
-                      "aws:cdk:cloudformation:props": {
-                        "cidrBlock": "10.0.0.0/24",
-                        "vpcId": {
-                          "Ref": "MyLabVPCF4B60AD5"
-                        },
-                        "availabilityZone": {
-                          "Fn::Select": [
-                            0,
-                            {
-                              "Fn::GetAZs": ""
-                            }
-                          ]
-                        },
-                        "mapPublicIpOnLaunch": true,
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "vpc/My Lab VPC/My-PublicSubnet1"
-                          },
-                          {
-                            "key": "aws-cdk:subnet-name",
-                            "value": "My-Public"
-                          },
-                          {
-                            "key": "aws-cdk:subnet-type",
-                            "value": "Public"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "Acl": {
-                    "id": "Acl",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet1/Acl"
-                  },
-                  "RouteTable": {
-                    "id": "RouteTable",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet1/RouteTable",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
-                      "aws:cdk:cloudformation:props": {
-                        "vpcId": {
-                          "Ref": "MyLabVPCF4B60AD5"
-                        },
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "vpc/My Lab VPC/My-PublicSubnet1"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "RouteTableAssociation": {
-                    "id": "RouteTableAssociation",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet1/RouteTableAssociation",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
-                      "aws:cdk:cloudformation:props": {
-                        "routeTableId": {
-                          "Ref": "MyLabVPCMyPublicSubnet1RouteTableF283C97E"
-                        },
-                        "subnetId": {
-                          "Ref": "MyLabVPCMyPublicSubnet1Subnet20377300"
-                        }
-                      }
-                    }
-                  },
-                  "DefaultRoute": {
-                    "id": "DefaultRoute",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet1/DefaultRoute",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
-                      "aws:cdk:cloudformation:props": {
-                        "routeTableId": {
-                          "Ref": "MyLabVPCMyPublicSubnet1RouteTableF283C97E"
-                        },
-                        "destinationCidrBlock": "0.0.0.0/0",
-                        "gatewayId": {
-                          "Ref": "MyLabVPCIGWA4D3C0CD"
-                        }
-                      }
-                    }
+                ]
+              }
+            }
+          },
+          "My Internet Gateway": {
+            "id": "My Internet Gateway",
+            "path": "vpc/My Internet Gateway",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+              "aws:cdk:cloudformation:props": {
+                "tags": [
+                  {
+                    "key": "Name",
+                    "value": "My IGW"
                   }
-                }
-              },
-              "My-PublicSubnet2": {
-                "id": "My-PublicSubnet2",
-                "path": "vpc/My Lab VPC/My-PublicSubnet2",
-                "children": {
-                  "Subnet": {
-                    "id": "Subnet",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet2/Subnet",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
-                      "aws:cdk:cloudformation:props": {
-                        "cidrBlock": "10.0.1.0/24",
-                        "vpcId": {
-                          "Ref": "MyLabVPCF4B60AD5"
-                        },
-                        "availabilityZone": {
-                          "Fn::Select": [
-                            1,
-                            {
-                              "Fn::GetAZs": ""
-                            }
-                          ]
-                        },
-                        "mapPublicIpOnLaunch": true,
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "vpc/My Lab VPC/My-PublicSubnet2"
-                          },
-                          {
-                            "key": "aws-cdk:subnet-name",
-                            "value": "My-Public"
-                          },
-                          {
-                            "key": "aws-cdk:subnet-type",
-                            "value": "Public"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "Acl": {
-                    "id": "Acl",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet2/Acl"
-                  },
-                  "RouteTable": {
-                    "id": "RouteTable",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet2/RouteTable",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
-                      "aws:cdk:cloudformation:props": {
-                        "vpcId": {
-                          "Ref": "MyLabVPCF4B60AD5"
-                        },
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "vpc/My Lab VPC/My-PublicSubnet2"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "RouteTableAssociation": {
-                    "id": "RouteTableAssociation",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet2/RouteTableAssociation",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
-                      "aws:cdk:cloudformation:props": {
-                        "routeTableId": {
-                          "Ref": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195"
-                        },
-                        "subnetId": {
-                          "Ref": "MyLabVPCMyPublicSubnet2Subnet1F0E3487"
-                        }
-                      }
-                    }
-                  },
-                  "DefaultRoute": {
-                    "id": "DefaultRoute",
-                    "path": "vpc/My Lab VPC/My-PublicSubnet2/DefaultRoute",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
-                      "aws:cdk:cloudformation:props": {
-                        "routeTableId": {
-                          "Ref": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195"
-                        },
-                        "destinationCidrBlock": "0.0.0.0/0",
-                        "gatewayId": {
-                          "Ref": "MyLabVPCIGWA4D3C0CD"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "IGW": {
-                "id": "IGW",
-                "path": "vpc/My Lab VPC/IGW",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
-                  "aws:cdk:cloudformation:props": {
-                    "tags": [
-                      {
-                        "key": "Name",
-                        "value": "vpc/My Lab VPC"
-                      }
-                    ]
-                  }
-                }
-              },
-              "VPCGW": {
-                "id": "VPCGW",
-                "path": "vpc/My Lab VPC/VPCGW",
-                "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
-                  "aws:cdk:cloudformation:props": {
-                    "vpcId": {
-                      "Ref": "MyLabVPCF4B60AD5"
-                    },
-                    "internetGatewayId": {
-                      "Ref": "MyLabVPCIGWA4D3C0CD"
-                    }
-                  }
+                ]
+              }
+            }
+          },
+          "My VPC Gateway Attachment": {
+            "id": "My VPC Gateway Attachment",
+            "path": "vpc/My VPC Gateway Attachment",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+              "aws:cdk:cloudformation:props": {
+                "vpcId": {
+                  "Ref": "MyLabVPC"
+                },
+                "internetGatewayId": {
+                  "Ref": "MyInternetGateway"
                 }
               }
             }
           },
-          "VPC-CIDR": {
-            "id": "VPC-CIDR",
-            "path": "vpc/VPC-CIDR"
+          "My Public Route Table": {
+            "id": "My Public Route Table",
+            "path": "vpc/My Public Route Table",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+              "aws:cdk:cloudformation:props": {
+                "vpcId": {
+                  "Ref": "MyLabVPC"
+                },
+                "tags": [
+                  {
+                    "key": "Name",
+                    "value": "My Public Route Table"
+                  }
+                ]
+              }
+            }
           },
-          "VPC-id": {
-            "id": "VPC-id",
-            "path": "vpc/VPC-id"
+          "My Public Route": {
+            "id": "My Public Route",
+            "path": "vpc/My Public Route",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "MyPublicRouteTable"
+                },
+                "destinationCidrBlock": "0.0.0.0/0",
+                "gatewayId": {
+                  "Ref": "MyInternetGateway"
+                }
+              }
+            }
           },
-          "VPC-AZ-1": {
-            "id": "VPC-AZ-1",
-            "path": "vpc/VPC-AZ-1"
+          "Public-Subnet-1": {
+            "id": "Public-Subnet-1",
+            "path": "vpc/Public-Subnet-1",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+              "aws:cdk:cloudformation:props": {
+                "cidrBlock": "10.0.1.0/24",
+                "vpcId": {
+                  "Ref": "MyLabVPC"
+                },
+                "availabilityZone": {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::GetAZs": ""
+                    }
+                  ]
+                },
+                "mapPublicIpOnLaunch": true,
+                "tags": [
+                  {
+                    "key": "Name",
+                    "value": "Public-Subnet-1"
+                  }
+                ]
+              }
+            }
           },
-          "VPC-AZ-2": {
-            "id": "VPC-AZ-2",
-            "path": "vpc/VPC-AZ-2"
+          "Public-Subnet-2": {
+            "id": "Public-Subnet-2",
+            "path": "vpc/Public-Subnet-2",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+              "aws:cdk:cloudformation:props": {
+                "cidrBlock": "10.0.3.0/24",
+                "vpcId": {
+                  "Ref": "MyLabVPC"
+                },
+                "availabilityZone": {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::GetAZs": ""
+                    }
+                  ]
+                },
+                "mapPublicIpOnLaunch": true,
+                "tags": [
+                  {
+                    "key": "Name",
+                    "value": "Public-Subnet-2"
+                  }
+                ]
+              }
+            }
           },
-          "VPC-Public-Subnet-1": {
-            "id": "VPC-Public-Subnet-1",
-            "path": "vpc/VPC-Public-Subnet-1"
+          "PublicSubnet1RouteTableAssociation": {
+            "id": "PublicSubnet1RouteTableAssociation",
+            "path": "vpc/PublicSubnet1RouteTableAssociation",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "MyPublicRouteTable"
+                },
+                "subnetId": {
+                  "Ref": "PublicSubnet1"
+                }
+              }
+            }
           },
-          "VPC-Public-Subnet-1-Route-Table-id": {
-            "id": "VPC-Public-Subnet-1-Route-Table-id",
-            "path": "vpc/VPC-Public-Subnet-1-Route-Table-id"
+          "PublicSubnet2RouteTableAssociation": {
+            "id": "PublicSubnet2RouteTableAssociation",
+            "path": "vpc/PublicSubnet2RouteTableAssociation",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+              "aws:cdk:cloudformation:props": {
+                "routeTableId": {
+                  "Ref": "MyPublicRouteTable"
+                },
+                "subnetId": {
+                  "Ref": "PublicSubnet2"
+                }
+              }
+            }
           },
-          "VPC-Public-Subnet-2": {
-            "id": "VPC-Public-Subnet-2",
-            "path": "vpc/VPC-Public-Subnet-2"
+          "PublicSubnet1NetworkAclAssociation": {
+            "id": "PublicSubnet1NetworkAclAssociation",
+            "path": "vpc/PublicSubnet1NetworkAclAssociation",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+              "aws:cdk:cloudformation:props": {
+                "networkAclId": {
+                  "Fn::GetAtt": [
+                    "MyLabVPC",
+                    "DefaultNetworkAcl"
+                  ]
+                },
+                "subnetId": {
+                  "Ref": "PublicSubnet1"
+                }
+              }
+            }
           },
-          "VPC-Public-Subnet-2-Route-Table-id": {
-            "id": "VPC-Public-Subnet-2-Route-Table-id",
-            "path": "vpc/VPC-Public-Subnet-2-Route-Table-id"
+          "PublicSubnet2NetworkAclAssociation": {
+            "id": "PublicSubnet2NetworkAclAssociation",
+            "path": "vpc/PublicSubnet2NetworkAclAssociation",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::SubnetNetworkAclAssociation",
+              "aws:cdk:cloudformation:props": {
+                "networkAclId": {
+                  "Fn::GetAtt": [
+                    "MyLabVPC",
+                    "DefaultNetworkAcl"
+                  ]
+                },
+                "subnetId": {
+                  "Ref": "PublicSubnet2"
+                }
+              }
+            }
+          },
+          "vpc-id": {
+            "id": "vpc-id",
+            "path": "vpc/vpc-id"
+          },
+          "vpc-CIDR": {
+            "id": "vpc-CIDR",
+            "path": "vpc/vpc-CIDR"
+          },
+          "igw-id": {
+            "id": "igw-id",
+            "path": "vpc/igw-id"
+          },
+          "Public Sunet 1": {
+            "id": "Public Sunet 1",
+            "path": "vpc/Public Sunet 1"
+          },
+          "Public Sunet 2": {
+            "id": "Public Sunet 2",
+            "path": "vpc/Public Sunet 2"
           }
         }
       }

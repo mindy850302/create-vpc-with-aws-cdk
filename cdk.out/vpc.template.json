@@ -1,29 +1,90 @@
 {
   "Resources": {
-    "MyLabVPCF4B60AD5": {
+    "MyLabVPC": {
       "Type": "AWS::EC2::VPC",
       "Properties": {
         "CidrBlock": "10.0.0.0/16",
-        "EnableDnsHostnames": true,
-        "EnableDnsSupport": true,
-        "InstanceTenancy": "default",
         "Tags": [
           {
             "Key": "Name",
-            "Value": "vpc/My Lab VPC"
+            "Value": "My Lab VPC"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "vpc/My Lab VPC"
+      }
+    },
+    "MyInternetGateway": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "My IGW"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "vpc/My Internet Gateway"
+      }
+    },
+    "MyVPCGatewayAttachment": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "MyLabVPC"
+        },
+        "InternetGatewayId": {
+          "Ref": "MyInternetGateway"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "vpc/My VPC Gateway Attachment"
+      }
+    },
+    "MyPublicRouteTable": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "MyLabVPC"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "My Public Route Table"
           }
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/Resource"
+        "aws:cdk:path": "vpc/My Public Route Table"
       }
     },
-    "MyLabVPCMyPublicSubnet1Subnet20377300": {
+    "MyPublicRoute": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "MyPublicRouteTable"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "MyInternetGateway"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "vpc/My Public Route"
+      }
+    },
+    "PublicSubnet1": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
-        "CidrBlock": "10.0.0.0/24",
+        "CidrBlock": "10.0.1.0/24",
         "VpcId": {
-          "Ref": "MyLabVPCF4B60AD5"
+          "Ref": "MyLabVPC"
         },
         "AvailabilityZone": {
           "Fn::Select": [
@@ -37,77 +98,20 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "vpc/My Lab VPC/My-PublicSubnet1"
-          },
-          {
-            "Key": "aws-cdk:subnet-name",
-            "Value": "My-Public"
-          },
-          {
-            "Key": "aws-cdk:subnet-type",
-            "Value": "Public"
+            "Value": "Public-Subnet-1"
           }
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet1/Subnet"
+        "aws:cdk:path": "vpc/Public-Subnet-1"
       }
     },
-    "MyLabVPCMyPublicSubnet1RouteTableF283C97E": {
-      "Type": "AWS::EC2::RouteTable",
-      "Properties": {
-        "VpcId": {
-          "Ref": "MyLabVPCF4B60AD5"
-        },
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "vpc/My Lab VPC/My-PublicSubnet1"
-          }
-        ]
-      },
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet1/RouteTable"
-      }
-    },
-    "MyLabVPCMyPublicSubnet1RouteTableAssociationA55EB6F8": {
-      "Type": "AWS::EC2::SubnetRouteTableAssociation",
-      "Properties": {
-        "RouteTableId": {
-          "Ref": "MyLabVPCMyPublicSubnet1RouteTableF283C97E"
-        },
-        "SubnetId": {
-          "Ref": "MyLabVPCMyPublicSubnet1Subnet20377300"
-        }
-      },
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet1/RouteTableAssociation"
-      }
-    },
-    "MyLabVPCMyPublicSubnet1DefaultRoute3BCF8217": {
-      "Type": "AWS::EC2::Route",
-      "Properties": {
-        "RouteTableId": {
-          "Ref": "MyLabVPCMyPublicSubnet1RouteTableF283C97E"
-        },
-        "DestinationCidrBlock": "0.0.0.0/0",
-        "GatewayId": {
-          "Ref": "MyLabVPCIGWA4D3C0CD"
-        }
-      },
-      "DependsOn": [
-        "MyLabVPCVPCGW99F6FE72"
-      ],
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet1/DefaultRoute"
-      }
-    },
-    "MyLabVPCMyPublicSubnet2Subnet1F0E3487": {
+    "PublicSubnet2": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
-        "CidrBlock": "10.0.1.0/24",
+        "CidrBlock": "10.0.3.0/24",
         "VpcId": {
-          "Ref": "MyLabVPCF4B60AD5"
+          "Ref": "MyLabVPC"
         },
         "AvailabilityZone": {
           "Fn::Select": [
@@ -121,152 +125,99 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "vpc/My Lab VPC/My-PublicSubnet2"
-          },
-          {
-            "Key": "aws-cdk:subnet-name",
-            "Value": "My-Public"
-          },
-          {
-            "Key": "aws-cdk:subnet-type",
-            "Value": "Public"
+            "Value": "Public-Subnet-2"
           }
         ]
       },
       "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet2/Subnet"
+        "aws:cdk:path": "vpc/Public-Subnet-2"
       }
     },
-    "MyLabVPCMyPublicSubnet2RouteTableA4D8F195": {
-      "Type": "AWS::EC2::RouteTable",
-      "Properties": {
-        "VpcId": {
-          "Ref": "MyLabVPCF4B60AD5"
-        },
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "vpc/My Lab VPC/My-PublicSubnet2"
-          }
-        ]
-      },
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet2/RouteTable"
-      }
-    },
-    "MyLabVPCMyPublicSubnet2RouteTableAssociation0B957518": {
+    "PublicSubnet1RouteTableAssociation": {
       "Type": "AWS::EC2::SubnetRouteTableAssociation",
       "Properties": {
         "RouteTableId": {
-          "Ref": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195"
+          "Ref": "MyPublicRouteTable"
         },
         "SubnetId": {
-          "Ref": "MyLabVPCMyPublicSubnet2Subnet1F0E3487"
+          "Ref": "PublicSubnet1"
         }
       },
       "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet2/RouteTableAssociation"
+        "aws:cdk:path": "vpc/PublicSubnet1RouteTableAssociation"
       }
     },
-    "MyLabVPCMyPublicSubnet2DefaultRoute818CB36C": {
-      "Type": "AWS::EC2::Route",
+    "PublicSubnet2RouteTableAssociation": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
       "Properties": {
         "RouteTableId": {
-          "Ref": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195"
+          "Ref": "MyPublicRouteTable"
         },
-        "DestinationCidrBlock": "0.0.0.0/0",
-        "GatewayId": {
-          "Ref": "MyLabVPCIGWA4D3C0CD"
-        }
-      },
-      "DependsOn": [
-        "MyLabVPCVPCGW99F6FE72"
-      ],
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/My-PublicSubnet2/DefaultRoute"
-      }
-    },
-    "MyLabVPCIGWA4D3C0CD": {
-      "Type": "AWS::EC2::InternetGateway",
-      "Properties": {
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "vpc/My Lab VPC"
-          }
-        ]
-      },
-      "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/IGW"
-      }
-    },
-    "MyLabVPCVPCGW99F6FE72": {
-      "Type": "AWS::EC2::VPCGatewayAttachment",
-      "Properties": {
-        "VpcId": {
-          "Ref": "MyLabVPCF4B60AD5"
-        },
-        "InternetGatewayId": {
-          "Ref": "MyLabVPCIGWA4D3C0CD"
+        "SubnetId": {
+          "Ref": "PublicSubnet2"
         }
       },
       "Metadata": {
-        "aws:cdk:path": "vpc/My Lab VPC/VPCGW"
+        "aws:cdk:path": "vpc/PublicSubnet2RouteTableAssociation"
+      }
+    },
+    "PublicSubnet1NetworkAclAssociation": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Fn::GetAtt": [
+            "MyLabVPC",
+            "DefaultNetworkAcl"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "PublicSubnet1"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "vpc/PublicSubnet1NetworkAclAssociation"
+      }
+    },
+    "PublicSubnet2NetworkAclAssociation": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Fn::GetAtt": [
+            "MyLabVPC",
+            "DefaultNetworkAcl"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "PublicSubnet2"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "vpc/PublicSubnet2NetworkAclAssociation"
       }
     }
   },
   "Outputs": {
-    "VPCCIDR": {
+    "vpcid": {
       "Value": {
-        "Fn::GetAtt": [
-          "MyLabVPCF4B60AD5",
-          "CidrBlock"
-        ]
+        "Ref": "MyLabVPC"
       }
     },
-    "VPCid": {
+    "vpcCIDR": {
+      "Value": "10.0.0.0/16"
+    },
+    "igwid": {
       "Value": {
-        "Ref": "MyLabVPCF4B60AD5"
+        "Ref": "MyInternetGateway"
       }
     },
-    "VPCAZ1": {
+    "PublicSunet1": {
       "Value": {
-        "Fn::Select": [
-          0,
-          {
-            "Fn::GetAZs": ""
-          }
-        ]
+        "Ref": "PublicSubnet1"
       }
     },
-    "VPCAZ2": {
+    "PublicSunet2": {
       "Value": {
-        "Fn::Select": [
-          1,
-          {
-            "Fn::GetAZs": ""
-          }
-        ]
-      }
-    },
-    "VPCPublicSubnet1": {
-      "Value": {
-        "Ref": "MyLabVPCMyPublicSubnet1Subnet20377300"
-      }
-    },
-    "VPCPublicSubnet1RouteTableid": {
-      "Value": {
-        "Ref": "MyLabVPCMyPublicSubnet1RouteTableF283C97E"
-      }
-    },
-    "VPCPublicSubnet2": {
-      "Value": {
-        "Ref": "MyLabVPCMyPublicSubnet2Subnet1F0E3487"
-      }
-    },
-    "VPCPublicSubnet2RouteTableid": {
-      "Value": {
-        "Ref": "MyLabVPCMyPublicSubnet2RouteTableA4D8F195"
+        "Ref": "PublicSubnet2"
       }
     }
   }
